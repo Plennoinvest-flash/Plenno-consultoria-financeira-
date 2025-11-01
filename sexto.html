@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plenno Consultoria Financeira - Investir com Inteligência</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark-gold: #B8860B;
+            --black: #000000;
+            --dark-gray: #121212;
+            --medium-gray: #1E1E1E;
+            --light-gray: #2A2A2A;
+            --white: #FFFFFF;
+            --text-gray: #CCCCCC;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.95);
+            padding: 20px 0;
+            border-bottom: 2px solid var(--gold);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-image {
+            height: 50px;
+            margin-right: 15px;
+            background: var(--gold);
+            border-radius: 5px;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--black);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--gold);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--gold);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23121212"/><path d="M0 0L100 100M100 0L0 100" stroke="%23D4AF37" stroke-width="1" opacity="0.3"/></svg>');
+            background-size: cover;
+            padding: 180px 0 100px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: var(--text-gray);
+        }
+
+        .quote {
+            font-style: italic;
+            margin: 40px 0;
+            padding: 20px;
+            border-left: 3px solid var(--gold);
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--black);
+            padding: 14px 35px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid var(--gold);
+            font-size: 1.1rem;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--gold);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--gold);
+            color: var(--black);
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: var(--dark-gray);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--gold);
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+            margin: 15px auto;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-gray);
+        }
+
+        .about-image {
+            flex: 1;
+            background: var(--medium-gray);
+            height: 400px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--gold);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .about-image i {
+            font-size: 8rem;
+            color: var(--gold);
+            opacity: 0.7;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: var(--black);
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .service-card {
+            background: var(--light-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--gold);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .service-header {
+            padding: 20px;
+            background: var(--medium-gray);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .service-header h3 {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .service-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .edit-price-btn {
+            background: none;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s;
+        }
+
+        .edit-price-btn:hover {
+            background-color: var(--gold);
+            color: var(--black);
+        }
+
+        .service-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-body p {
+            color: var(--text-gray);
+            margin-bottom: 15px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+
+        .service-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+        }
+
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+
+        .service-features li i {
+            color: var(--gold);
+            margin-right: 10px;
+        }
+
+        .service-guarantee {
+            margin-top: auto;
+            padding: 10px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 5px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .service-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-buy {
+            flex: 1;
+            background-color: var(--gold);
+            color: var(--black);
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-buy:hover {
+            background-color: var(--dark-gold);
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 100px 0;
+            background-color: var(--dark-gray);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background: var(--light-gray);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--gold);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            margin-bottom: 15px;
+            color: var(--gold);
+        }
+
+        .benefit-card p {
+            color: var(--text-gray);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--black);
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            justify-content: center;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h3 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--gold);
+            width: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: var(--light-gray);
+            color: var(--gold);
+            border-radius: 50%;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background-color: var(--gold);
+            color: var(--black);
+            transform: translateY(-5px);
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--light-gray);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--dark-gray);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 5px;
+            color: var(--white);
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            border-color: var(--gold);
+            outline: none;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--gold);
+            color: var(--black);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            width: 100%;
+            font-size: 1.1rem;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--dark-gold);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            padding: 50px 0 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-column p, .footer-column a {
+            color: var(--text-gray);
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--gold);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo-image {
+            height: 40px;
+            margin-right: 10px;
+            background: var(--gold);
+            border-radius: 5px;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--black);
+            font-weight: bold;
+        }
+
+        .footer-logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--gold);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Payment Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: var(--light-gray);
+            padding: 40px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--gold);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 15px;
+        }
+
+        .modal-header h2 {
+            color: var(--gold);
+            font-size: 1.8rem;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: var(--gold);
+        }
+
+        .modal-body .form-group {
+            margin-bottom: 25px;
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .payment-method {
+            background: var(--dark-gray);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .payment-method:hover {
+            border-color: var(--gold);
+        }
+
+        .payment-method.selected {
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .payment-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--gold);
+        }
+
+        .payment-details {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: var(--dark-gray);
+            border-radius: 8px;
+        }
+
+        .payment-details.active {
+            display: block;
+        }
+
+        .pix-code {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: var(--medium-gray);
+            border-radius: 8px;
+            word-break: break-all;
+            font-family: monospace;
+        }
+
+        .boleto-info {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: var(--medium-gray);
+            border-radius: 8px;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .cancel-btn {
+            background-color: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+
+        .cancel-btn:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+        }
+
+        .confirm-btn {
+            background-color: var(--gold);
+            border: none;
+            color: var(--black);
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .confirm-btn:hover {
+            background-color: var(--dark-gold);
+        }
+
+        .confirm-btn:disabled {
+            background-color: #666;
+            cursor: not-allowed;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background-color: rgba(46, 125, 50, 0.2);
+            border: 1px solid #4CAF50;
+            color: #4CAF50;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Instructions Section */
+        .instructions {
+            padding: 80px 0;
+            background-color: var(--dark-gray);
+        }
+
+        .instructions-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .instructions-step {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: var(--light-gray);
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+        }
+
+        .instructions-step h3 {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .instructions-step p {
+            color: var(--text-gray);
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            nav ul li {
+                margin: 0 10px 10px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .mobile-menu {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            nav {
+                display: none;
+                width: 100%;
+                margin-top: 20px;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .service-actions {
+                flex-direction: column;
+            }
+            
+            .modal-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-image">P</div>
+                    <div class="logo-text">PLENNO</div>
+                </div>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav id="main-nav">
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#benefits">Vantagens</a></li>
+                        <li><a href="#instructions">Como Usar</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>PLENNO CONSULTORIA FINANCEIRA</h1>
+                <p>Consultoria financeira com foco em clareza, segurança e resultados. Na Plenno, investir com inteligência é o primeiro passo para crescer com segurança.</p>
+                
+                <div class="quote">
+                    <p>"O investimento mais importante que você pode fazer é em você mesmo. Deixe a Plenno guiar seus passos em direção à liberdade financeira."</p>
+                </div>
+                
+                <p>Transforme seu futuro financeiro com estratégias personalizadas e orientação especializada.</p>
+                
+                <div>
+                    <a href="#services" class="btn">Conheça Nossos Serviços</a>
+                    <a href="#contact" class="btn btn-outline">Fale Conosco</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre a Plenno</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Excelência em Consultoria Financeira</h3>
+                    <p>A Plenno Consultoria Financeira nasceu da necessidade de oferecer orientação financeira acessível e personalizada para todos os perfis de investidores. Nossa missão é simplificar o complexo mundo dos investimentos, tornando-o compreensível e lucrativo para nossos clientes.</p>
+                    <p>Com anos de experiência no mercado financeiro, nossa equipe de especialistas está preparada para oferecer as melhores estratégias de investimento, sempre alinhadas com seus objetivos e perfil de risco.</p>
+                    <p>Acreditamos que a educação financeira é a base para decisões conscientes e resultados consistentes. Por isso, além de oferecer consultoria, nos dedicamos a capacitar nossos clientes com conhecimento e ferramentas para que possam tomar as melhores decisões para seu futuro.</p>
+                    <a href="#services" class="btn">Ver Serviços</a>
+                </div>
+                <div class="about-image">
+                    <i class="fas fa-university"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Serviços Financeiros</h2>
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Análise de Perfil do Investidor</h3>
+                        <div class="service-price">
+                            R$ 25,00
+                            <button class="edit-price-btn" data-service="profile-analysis">Editar</button>
+                        </div>
+                    </div>
+                    <div class="service-body">
+                        <p>Identificação do seu perfil de risco e orientação sobre os melhores investimentos para você.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Avaliação completa do seu perfil</li>
+                            <li><i class="fas fa-check"></i> Identificação de tolerância ao risco</li>
+                            <li><i class="fas fa-check"></i> Recomendações personalizadas</li>
+                            <li><i class="fas fa-check"></i> Relatório detalhado</li>
+                        </ul>
+                        <div class="service-guarantee">
+                            <i class="fas fa-shield-alt"></i> 7 dias de garantia - Reembolso total se não ficar satisfeito
+                        </div>
+                        <div class="service-actions">
+                            <button class="btn-buy" data-service="profile-analysis" data-price="25.00">Contratar Agora</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Análise de Carteira de Investimentos</h3>
+                        <div class="service-price">
+                            R$ 40,00
+                            <button class="edit-price-btn" data-service="portfolio-analysis">Editar</button>
+                        </div>
+                    </div>
+                    <div class="service-body">
+                        <p>Avaliação completa da sua carteira atual e recomendações para otimização.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Análise da diversificação</li>
+                            <li><i class="fas fa-check"></i> Identificação de oportunidades</li>
+                            <li><i class="fas fa-check"></i> Estratégia de rebalanceamento</li>
+                            <li><i class="fas fa-check"></i> Projeção de retornos</li>
+                        </ul>
+                        <div class="service-guarantee">
+                            <i class="fas fa-shield-alt"></i> 7 dias de garantia - Reembolso total se não ficar satisfeito
+                        </div>
+                        <div class="service-actions">
+                            <button class="btn-buy" data-service="portfolio-analysis" data-price="40.00">Contratar Agora</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Planejamento Financeiro Pessoal</h3>
+                        <div class="service-price">
+                            R$ 80,00
+                            <button class="edit-price-btn" data-service="financial-planning">Editar</button>
+                        </div>
+                    </div>
+                    <div class="service-body">
+                        <p>Elaboração de um plano financeiro completo para alcançar seus objetivos.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Definição de metas financeiras</li>
+                            <li><i class="fas fa-check"></i> Orçamento personalizado</li>
+                            <li><i class="fas fa-check"></i> Estratégia de investimentos</li>
+                            <li><i class="fas fa-check"></i> Acompanhamento mensal</li>
+                        </ul>
+                        <div class="service-guarantee">
+                            <i class="fas fa-shield-alt"></i> 7 dias de garantia - Reembolso total se não ficar satisfeito
+                        </div>
+                        <div class="service-actions">
+                            <button class="btn-buy" data-service="financial-planning" data-price="80.00">Contratar Agora</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Consultoria de Investimentos Avançada</h3>
+                        <div class="service-price">
+                            R$ 120,00
+                            <button class="edit-price-btn" data-service="advanced-consulting">Editar</button>
+                        </div>
+                    </div>
+                    <div class="service-body">
+                        <p>Estratégias avançadas para investidores experientes.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Análise técnica e fundamentalista</li>
+                            <li><i class="fas fa-check"></i> Estratégias de hedge</li>
+                            <li><i class="fas fa-check"></i> Alocação de ativos complexa</li>
+                            <li><i class="fas fa-check"></i> Acompanhamento semanal</li>
+                        </ul>
+                        <div class="service-guarantee">
+                            <i class="fas fa-shield-alt"></i> 7 dias de garantia - Reembolso total se não ficar satisfeito
+                        </div>
+                        <div class="service-actions">
+                            <button class="btn-buy" data-service="advanced-consulting" data-price="120.00">Contratar Agora</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <h2 class="section-title">Por que Escolher a Plenno?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Segurança</h3>
+                    <p>Nossas estratégias priorizam a segurança do seu capital, com análises detalhadas e acompanhamento constante.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Resultados Comprovados</h3>
+                    <p>Histórico de rentabilidade acima da média do mercado, com transparência total nos resultados.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Consultoria Personalizada</h3>
+                    <p>Atendimento individualizado, com estratégias adaptadas ao seu perfil e objetivos específicos.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Educação Financeira</h3>
+                    <p>Capacitamos você para tomar decisões financeiras conscientes e independentes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructions Section -->
+    <section id="instructions" class="instructions">
+        <div class="container">
+            <h2 class="section-title">Como Usar Nosso Site</h2>
+            <div class="instructions-content">
+                <div class="instructions-step">
+                    <h3>1. Navegação</h3>
+                    <p>Utilize o menu no topo da página para navegar entre as seções do site:</p>
+                    <p><strong>Início</strong> - Apresentação da empresa e frase motivacional</p>
+                    <p><strong>Sobre</strong> - Conheça mais sobre a Plenno Consultoria Financeira</p>
+                    <p><strong>Serviços</strong> - Conheça nossos serviços e preços</p>
+                    <p><strong>Vantagens</strong> - Descubra por que nos escolher</p>
+                    <p><strong>Como Usar</strong> - Instruções para utilizar o site (esta seção)</p>
+                    <p><strong>Contato</strong> - Entre em contato conosco</p>
+                </div>
+                
+                <div class="instructions-step">
+                    <h3>2. Conheça Nossos Serviços</h3>
+                    <p>Na seção "Serviços", você encontrará todos os nossos serviços com descrições detalhadas e preços.</p>
+                    <p>Cada serviço é apresentado em um card com:</p>
+                    <p>- Nome do serviço</p>
+                    <p>- Preço atual</p>
+                    <p>- Descrição completa</p>
+                    <p>- Lista de benefícios incluídos</p>
+                    <p>- Garantia de 7 dias</p>
+                    <p>- Botão para contratação</p>
+                </div>
+                
+                <div class="instructions-step">
+                    <h3>3. Processo de Compra</h3>
+                    <p>Para contratar um serviço:</p>
+                    <p>1. Vá até a seção "Serviços"</p>
+                    <p>2. Escolha o serviço desejado</p>
+                    <p>3. Clique no botão "Contratar Agora"</p>
+                    <p>4. Escolha a forma de pagamento (Cartão, PIX ou Boleto)</p>
+                    <p>5. Siga as instruções para finalizar o pagamento</p>
+                    <p>6. Após a confirmação do pagamento, você receberá o serviço por e-mail</p>
+                </div>
+                
+                <div class="instructions-step">
+                    <h3>4. Garantia de 7 Dias</h3>
+                    <p>Todos os nossos serviços incluem uma garantia de 7 dias. Se por qualquer motivo você não ficar satisfeito com o serviço adquirido, basta nos contatar dentro de 7 dias após a compra para solicitar o reembolso total.</p>
+                </div>
+                
+                <div class="instructions-step">
+                    <h3>5. Edição de Preços (Funcionalidade Administrativa)</h3>
+                    <p>Como administrador, você pode editar os preços dos serviços a qualquer momento:</p>
+                    <p>1. Vá até a seção "Serviços"</p>
+                    <p>2. Localize o botão "Editar" ao lado do preço de cada serviço</p>
+                    <p>3. Clique no botão para abrir o modal de edição</p>
+                    <p>4. Digite o novo valor no campo apropriado</p>
+                    <p>5. Clique em "Salvar Alterações" para confirmar</p>
+                    <p>O preço será atualizado imediatamente no site.</p>
+                </div>
+                
+                <div class="instructions-step">
+                    <h3>6. Formulário de Contato</h3>
+                    <p>Na seção "Contato", os clientes podem:</p>
+                    <p>- Preencher o formulário com seus dados</p>
+                    <p>- Selecionar o serviço de interesse</p>
+                    <p>- Enviar uma mensagem personalizada</p>
+                    <p>Após o envio, uma mensagem de confirmação será exibida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+                    <p><i class="fas fa-envelope"></i> plennofinanceiro@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> (11) 96700-6154</p>
+                    <p><i class="fas fa-map-marker-alt"></i> São Paulo, Brasil</p>
+                    <p><i class="fas fa-clock"></i> Segunda a Sexta: 9h às 18h</p>
+                    
+                    <h3 style="margin-top: 30px;">Nossas Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com/plenno.invest" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://youtube.com/Plennoinvest" target="_blank" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="supportForm">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Serviço de Interesse</label>
+                            <select id="service" name="service">
+                                <option value="">Selecione um serviço</option>
+                                <option value="profile-analysis">Análise de Perfil do Investidor</option>
+                                <option value="portfolio-analysis">Análise de Carteira de Investimentos</option>
+                                <option value="financial-planning">Planejamento Financeiro Pessoal</option>
+                                <option value="advanced-consulting">Consultoria de Investimentos Avançada</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" placeholder="Conte-nos sobre suas necessidades..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                        <div class="success-message" id="formSuccess">
+                            Mensagem enviada com sucesso! Entraremos em contato em breve.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <div class="footer-logo-image">P</div>
+                        <div class="footer-logo-text">PLENNO</div>
+                    </div>
+                    <p>Consultoria financeira com foco em clareza, segurança e resultados. Investir com inteligência é o primeiro passo para crescer com segurança.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <a href="#home">Início</a>
+                    <a href="#about">Sobre Nós</a>
+                    <a href="#services">Serviços</a>
+                    <a href="#benefits">Vantagens</a>
+                    <a href="#instructions">Como Usar</a>
+                    <a href="#contact">Contato</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Serviços</h3>
+                    <a href="#services">Análise de Perfil</a>
+                    <a href="#services">Análise de Carteira</a>
+                    <a href="#services">Planejamento Financeiro</a>
+                    <a href="#services">Consultoria Avançada</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> plennofinanceiro@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> (11) 96700-6154</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/plenno.invest" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/Plennoinvest" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Plenno Consultoria Financeira. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Price Edit Modal -->
+    <div id="priceModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Editar Preço do Serviço</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="serviceName">Serviço</label>
+                    <input type="text" id="serviceName" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="newPrice">Novo Preço (R$)</label>
+                    <input type="number" id="newPrice" step="0.01" min="0">
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="cancel-btn">Cancelar</button>
+                <button class="save-btn">Salvar Alterações</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Finalizar Compra</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <h3 id="paymentServiceName">Serviço: Análise de Perfil do Investidor</h3>
+                    <p id="paymentServicePrice">Valor: R$ 25,00</p>
+                </div>
+                
+                <div class="form-group">
+                    <label>Selecione a forma de pagamento:</label>
+                    <div class="payment-methods">
+                        <div class="payment-method" data-method="card">
+                            <div class="payment-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <div>Cartão</div>
+                        </div>
+                        <div class="payment-method" data-method="pix">
+                            <div class="payment-icon">
+                                <i class="fas fa-qrcode"></i>
+                            </div>
+                            <div>PIX</div>
+                        </div>
+                        <div class="payment-method" data-method="boleto">
+                            <div class="payment-icon">
+                                <i class="fas fa-barcode"></i>
+                            </div>
+                            <div>Boleto</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="cardDetails" class="payment-details">
+                    <div class="form-group">
+                        <label for="cardNumber">Número do Cartão</label>
+                        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456">
+                    </div>
+                    <div class="form-group">
+                        <label for="cardName">Nome no Cartão</label>
+                        <input type="text" id="cardName" placeholder="João da Silva">
+                    </div>
+                    <div style="display: flex; gap: 15px;">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="cardExpiry">Validade</label>
+                            <input type="text" id="cardExpiry" placeholder="MM/AA">
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="cardCvv">CVV</label>
+                            <input type="text" id="cardCvv" placeholder="123">
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="pixDetails" class="payment-details">
+                    <div class="pix-code">
+                        <p>Chave PIX: plennofinanceiro@gmail.com</p>
+                        <p>Valor: <span id="pixAmount">R$ 25,00</span></p>
+                        <p>Use o QR Code abaixo para pagar:</p>
+                        <div style="background: white; padding: 10px; display: inline-block; margin: 10px 0;">
+                            <!-- QR Code placeholder -->
+                            <div style="width: 200px; height: 200px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; color: #333;">
+                                QR CODE PIX
+                            </div>
+                        </div>
+                        <p>Após o pagamento, enviaremos o serviço para seu e-mail em até 24 horas.</p>
+                    </div>
+                </div>
+                
+                <div id="boletoDetails" class="payment-details">
+                    <div class="boleto-info">
+                        <p>Valor: <span id="boletoAmount">R$ 25,00</span></p>
+                        <p>O boleto será gerado após a confirmação da compra.</p>
+                        <p>Prazo de vencimento: 3 dias úteis</p>
+                        <p>Após o pagamento, enviaremos o serviço para seu e-mail em até 48 horas.</p>
+                    </div>
+                </div>
+                
+                <div class="service-guarantee" style="margin-top: 20px;">
+                    <i class="fas fa-shield-alt"></i> 7 dias de garantia - Reembolso total se não ficar satisfeito
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="cancel-btn">Cancelar</button>
+                <button class="confirm-btn" id="confirmPayment" disabled>Finalizar Pagamento</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mainNav = document.getElementById('main-nav');
+        
+        mobileMenu.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mainNav.classList.remove('active');
+                }
+            });
+        });
+        
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.background = 'rgba(0, 0, 0, 0.95)';
+                header.style.padding = '15px 0';
+            } else {
+                header.style.background = 'rgba(0, 0, 0, 0.9)';
+                header.style.padding = '20px 0';
+            }
+        });
+        
+        // Price editing functionality
+        const editButtons = document.querySelectorAll('.edit-price-btn');
+        const priceModal = document.getElementById('priceModal');
+        const closePriceModal = document.querySelector('#priceModal .close-modal');
+        const cancelPriceBtn = document.querySelector('#priceModal .cancel-btn');
+        const savePriceBtn = document.querySelector('#priceModal .save-btn');
+        const serviceNameInput = document.getElementById('serviceName');
+        const newPriceInput = document.getElementById('newPrice');
+        
+        let currentService = null;
+        
+        editButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const service = this.getAttribute('data-service');
+                const serviceCard = this.closest('.service-card');
+                const serviceText = serviceCard.querySelector('h3').textContent;
+                const currentPrice = serviceCard.querySelector('.service-price').firstChild.textContent.trim();
+                
+                currentService = service;
+                serviceNameInput.value = serviceText;
+                newPriceInput.value = parseFloat(currentPrice.replace('R$ ', '').replace(',', '.'));
+                
+                priceModal.style.display = 'flex';
+            });
+        });
+        
+        function closePriceModalFunc() {
+            priceModal.style.display = 'none';
+            currentService = null;
+            serviceNameInput.value = '';
+            newPriceInput.value = '';
+        }
+        
+        closePriceModal.addEventListener('click', closePriceModalFunc);
+        cancelPriceBtn.addEventListener('click', closePriceModalFunc);
+        
+        savePriceBtn.addEventListener('click', function() {
+            if (currentService && newPriceInput.value) {
+                const newPrice = parseFloat(newPriceInput.value).toFixed(2);
+                const priceElements = document.querySelectorAll(`[data-service="${currentService}"]`);
+                
+                priceElements.forEach(element => {
+                    const priceContainer = element.parentElement;
+                    priceContainer.firstChild.textContent = `R$ ${newPrice.replace('.', ',')}`;
+                    
+                    // Update the buy button price as well
+                    const buyButton = element.closest('.service-card').querySelector('.btn-buy');
+                    if (buyButton) {
+                        buyButton.setAttribute('data-price', newPrice);
+                    }
+                });
+                
+                closePriceModalFunc();
+                alert('Preço atualizado com sucesso!');
+            }
+        });
+        
+        // Payment functionality
+        const buyButtons = document.querySelectorAll('.btn-buy');
+        const paymentModal = document.getElementById('paymentModal');
+        const closePaymentModal = document.querySelector('#paymentModal .close-modal');
+        const cancelPaymentBtn = document.querySelector('#paymentModal .cancel-btn');
+        const confirmPaymentBtn = document.getElementById('confirmPayment');
+        const paymentServiceName = document.getElementById('paymentServiceName');
+        const paymentServicePrice = document.getElementById('paymentServicePrice');
+        const paymentMethods = document.querySelectorAll('.payment-method');
+        const paymentDetails = document.querySelectorAll('.payment-details');
+        const pixAmount = document.getElementById('pixAmount');
+        const boletoAmount = document.getElementById('boletoAmount');
+        
+        let selectedPaymentMethod = null;
+        let selectedService = null;
+        let selectedPrice = null;
+        
+        buyButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                selectedService = this.getAttribute('data-service');
+                selectedPrice = this.getAttribute('data-price');
+                const serviceCard = this.closest('.service-card');
+                const serviceName = serviceCard.querySelector('h3').textContent;
+                
+                paymentServiceName.textContent = `Serviço: ${serviceName}`;
+                paymentServicePrice.textContent = `Valor: R$ ${parseFloat(selectedPrice).toFixed(2).replace('.', ',')}`;
+                pixAmount.textContent = `R$ ${parseFloat(selectedPrice).toFixed(2).replace('.', ',')}`;
+                boletoAmount.textContent = `R$ ${parseFloat(selectedPrice).toFixed(2).replace('.', ',')}`;
+                
+                // Reset payment method selection
+                selectedPaymentMethod = null;
+                paymentMethods.forEach(method => method.classList.remove('selected'));
+                paymentDetails.forEach(detail => detail.classList.remove('active'));
+                confirmPaymentBtn.disabled = true;
+                
+                paymentModal.style.display = 'flex';
+            });
+        });
+        
+        paymentMethods.forEach(method => {
+            method.addEventListener('click', function() {
+                const methodType = this.getAttribute('data-method');
+                
+                // Remove selection from all methods
+                paymentMethods.forEach(m => m.classList.remove('selected'));
+                paymentDetails.forEach(detail => detail.classList.remove('active'));
+                
+                // Add selection to clicked method
+                this.classList.add('selected');
+                document.getElementById(`${methodType}Details`).classList.add('active');
+                
+                selectedPaymentMethod = methodType;
+                confirmPaymentBtn.disabled = false;
+            });
+        });
+        
+        function closePaymentModalFunc() {
+            paymentModal.style.display = 'none';
+            selectedPaymentMethod = null;
+            selectedService = null;
+            selectedPrice = null;
+        }
+        
+        closePaymentModal.addEventListener('click', closePaymentModalFunc);
+        cancelPaymentBtn.addEventListener('click', closePaymentModalFunc);
+        
+        confirmPaymentBtn.addEventListener('click', function() {
+            if (selectedPaymentMethod && selectedService) {
+                // Simulate payment processing
+                alert(`Pagamento realizado com sucesso! \nServiço: ${selectedService} \nValor: R$ ${selectedPrice} \nMétodo: ${selectedPaymentMethod} \n\nVocve receberá o serviço por e-mail em breve.`);
+                
+                // Reset and close modal
+                closePaymentModalFunc();
+            }
+        });
+        
+        // Contact form submission
+        const contactForm = document.getElementById('supportForm');
+        const formSuccess = document.getElementById('formSuccess');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the form data to a server
+            // For this example, we'll just show a success message
+            formSuccess.style.display = 'block';
+            
+            // Reset the form
+            contactForm.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                formSuccess.style.display = 'none';
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
